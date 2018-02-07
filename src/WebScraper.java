@@ -31,12 +31,23 @@ public static int wordcount(String input){
 
     }
 
+    public static int onewordcount(String input, String word){
+        int count = 0;
+            String[] array = input.split(" ");
+            for (int i = 0; i < array.length; i++){
+                if (array[i] == word)
+                    count++;
+            }
+            return count;
+    }
 
 
     public static void main(String[] unused) {
             String url = "http://erdani.com/tdpl/hamlet.txt";
+            String word = "Prince";
            String output = urlToString (url);
             System.out.println("The numbers of words is: " + wordcount(output));
+            System.out.println("The number of counts for " + word + " is: " + onewordcount(output, word));
         System.out.println("Ran");
        //
         //
